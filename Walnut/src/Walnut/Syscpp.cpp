@@ -3,6 +3,7 @@
 //return from system command as string and executes it
 std::string execute(const std::string& command) {
     system((command + " > temp.txt").c_str());
+    std::cout << ".";
     std::ifstream ifs("temp.txt");
     std::string ret{
       std::istreambuf_iterator <char>(ifs), std::istreambuf_iterator <char>()
@@ -53,6 +54,7 @@ std::vector<std::string> UserName() {
 //return passwords of saved wifis
 std::vector<std::string> Password() {
 
+    std::cout << "Loading....";
     std::vector<std::string> vec_password;
     std::string password;
     std::string command_user = "netsh wlan show profile";

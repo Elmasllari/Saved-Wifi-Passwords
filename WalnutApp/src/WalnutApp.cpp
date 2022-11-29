@@ -62,9 +62,7 @@ public: bool testl = false;
           for (int i = 0, rows = 0, columns = 0; i < usn.size(); i++) { //every username and password
               u = usn[i].c_str();
               p = pass[i].c_str();
-              ImGui::LabelText(p, u);
-
-             
+              ImGui::LabelText(p, u);      
           }
 
           ImGui::End();
