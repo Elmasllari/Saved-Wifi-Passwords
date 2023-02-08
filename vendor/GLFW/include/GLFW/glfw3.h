@@ -2261,7 +2261,8 @@ GLFWAPI void glfwInitAllocator(const GLFWallocator* allocator);
  *  Vulkan related entry point queries.
  *
  *  This feature is mostly useful on macOS, if your copy of the Vulkan loader is in
- *  a location where GLFW cannot find it through dynamic loading, or if you are still
+ *  a location where GLFW cannot find it through dynamic 
+ , or if you are still
  *  using the static library version of the loader.
  *
  *  If set to `NULL`, GLFW will try to load the Vulkan loader dynamically by its standard

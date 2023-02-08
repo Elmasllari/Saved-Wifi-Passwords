@@ -152,6 +152,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Walnut\src\Walnut\Syscpp.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="WalnutApp.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\..\..\..\OneDrive\Desktop\icon_128x128.png" />
+    <Image Include="..\Walnut\src\Walnut\icon_128x128_1_48x48.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

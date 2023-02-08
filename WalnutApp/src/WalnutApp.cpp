@@ -1,17 +1,16 @@
 ﻿#include "Walnut/Application.h"
-
 #include "Walnut/EntryPoint.h"
-
-
 #include "Walnut/Image.h"
-
 #include "Walnut/Syscpp.h"
+#include <iostream>
+#include <vector>
 
 
 std::vector<std::string> pass = Password();
 std::vector<std::string> usn = UserName();
 const char* p;
 const char* u;
+
 
 //forget button & confirmation
 bool PopUp() {
@@ -47,6 +46,8 @@ public: bool testl = false;
 
       virtual void OnUIRender() override {
 
+
+          
           static float window_scale = 1.0f;
           int x = GetSystemMetrics(SM_CXSCREEN);
           int y = GetSystemMetrics(SM_CYSCREEN);
@@ -55,6 +56,24 @@ public: bool testl = false;
 
           ImGui::Begin(" ", NULL, ImGuiWindowFlags_NoResize);
 
+          if (ImGui::Button("Sort")) {
+              //bubblesort vector of strings
+              for (int i = 0; i < usn.size() - 1; i++)
+                  for (int j = 0; j < usn.size() - i - 1; j++)
+                      if (usn[j] > usn[j + 1])
+                      {
+                          std::string temp = usn[j];            //sort username
+                          usn[j] = usn[j + 1];
+                          usn[j + 1] = temp;
+
+                          std::string temp1 = pass[j];         //change password index same as username
+                          pass[j] = pass[j + 1];
+                          pass[j + 1] = temp1;
+
+                      }
+
+          }
+        
           ImGui::SetWindowFontScale(1.5);
           ImGui::LabelText("Password", "Wifi Network");
           ImGui::SetWindowFontScale(window_scale);
